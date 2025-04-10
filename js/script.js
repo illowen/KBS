@@ -246,3 +246,67 @@ $(".history_content").each(function () {
         $(this).toggleClass('show');
     });
 });
+
+$(".directions_wrapper").each(function () {
+    $('.directions_item').click(function() {
+
+        var id = $(this).attr('data-direct'),
+            content = $('.directions_block[data-direct="'+ id +'"]');
+
+        $('.directions_block').removeClass('active');
+        content.addClass('active');
+
+        $('.directions_item').removeClass('active');
+        $(this).addClass('active');
+    });
+});
+
+$(".supplies").each(function () {
+    $('.supplies_item').click(function() {
+
+        var id = $(this).attr('data-suppl'),
+            content = $('.supplies_block[data-suppl="'+ id +'"]');
+
+        $('.supplies_block').removeClass('active');
+        content.addClass('active');
+
+        $('.supplies_item').removeClass('active');
+        $(this).addClass('active');
+    });
+});
+
+if ($(window).width() < 1390) {
+    $('.supplies_block_clients').slick({
+        arrows: false,
+        dots: true,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 761,
+                settings: {
+                    slidesToShow: 2,
+                }
+            }
+        ]
+    });
+}
+
+if ($(window).width() < 992) {
+    $('.manufactur_wrapper').slick({
+        arrows: false,
+        dots: true,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 761,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+}
