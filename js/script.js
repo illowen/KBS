@@ -239,3 +239,10 @@ if ($(window).width() < 991) {
         ]
     });
 }
+
+
+$(".history_content").each(function () {
+    $('.history_wrap').hover(function(evet) {
+        $(this).toggleClass('show');
+    });
+});
